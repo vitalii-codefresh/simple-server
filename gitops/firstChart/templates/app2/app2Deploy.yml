@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-deployment2
+  labels:
+    app: simple-deployment2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app2
+  template:
+    metadata:
+      labels:
+        app: app2
+    spec:
+      containers:
+        - name: simple-server2
+          image: {{.Values.app2.image}}
+          ports:
+            - containerPort: 8010
+          env:
+            - name: APP1_HOST
+              value: {{ .Values.app2.app1host | quote }}

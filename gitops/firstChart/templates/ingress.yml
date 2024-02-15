@@ -1,0 +1,38 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: local-ingress
+  annotations:
+    target: /
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /add
+            pathType: Prefix
+            backend:
+              service:
+                name: app1-service
+                port:
+                  name: http
+          - path: /getRes
+            pathType: Prefix
+            backend:
+              service:
+                name: app2-service
+                port:
+                  name: http
+          - path: /getResults
+            pathType: Prefix
+            backend:
+              service:
+                name: app1-service
+                port:
+                  name: http
+          - path: /getDir
+            pathType: Prefix
+            backend:
+              service:
+                name: app1-service
+                port:
+                  name: http
