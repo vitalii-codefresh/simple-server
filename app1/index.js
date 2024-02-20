@@ -5,19 +5,21 @@ const {appendFile, readFile} = require("fs/promises");
 const {readdirSync} = require("fs");
 const {resolve} = require("path");
 require('dotenv').config();
-
+const router = express.Router();
 const port = process.env.PORT || 8000;
 const serviceId = crypto.randomBytes(5).toString("hex");
 const resultFile= "./data/results.csv";
 
 const app = express();
-app.get('/', (req, res) => {
+
+
+router.get('/', (req, res) => {
     res.statusCode = 200;
     res.header("Content-Type", "application/json");
     res.json({result: "hello", serviceId});
 })
 
-app.get('/add', express.json(), async (req, res) => {
+router.get('/add', express.json(), async (req, res) => {
     const body = req.body;
     if (!body || !body.firstValue || !body.secondValue) {
         res.statusCode = 400;
@@ -31,7 +33,7 @@ app.get('/add', express.json(), async (req, res) => {
     res.send({result, serviceId});
 })
 
-app.get('/getResults', async (req, res) => {
+router.get('/getResults', async (req, res) => {
     try {
         const results = await readResults();
         res.json({results, serviceId});
@@ -41,7 +43,7 @@ app.get('/getResults', async (req, res) => {
     }
 })
 
-app.get('/getDir', async (req, res) => {
+router.get('/getDir', async (req, res) => {
     try {
         const myPath = resolve();
         const files =  readdirSync("./");
@@ -52,6 +54,8 @@ app.get('/getDir', async (req, res) => {
         res.send("internal error");
     }
 })
+
+app.use("/app1", router);
 
 app.listen(port, () => {
     log(`server starts at port ${port}`, `id is - ${serviceId}`);
