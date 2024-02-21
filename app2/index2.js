@@ -30,7 +30,7 @@ router.get('/getRes', express.json(), async (req, res) => {
     }
 });
 
-app.use("app2", router);
+app.use("/app2", router);
 
 app.listen(port, () => {
     log(`server starts at port ${port}`, `id is - ${serviceId}`);
