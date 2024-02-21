@@ -5,8 +5,8 @@
 replicaCount: 2
 app1:
   port: 8002
-  image: vitaliicodefresh/app1
+  image: vitaliicodefresh/app1:develop
 
 app2:
   app1host: http://app1-service
-  image: vitaliicodefresh/app2
+  image: vitaliicodefresh/app2:develop
