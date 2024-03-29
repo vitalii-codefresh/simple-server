@@ -21,7 +21,7 @@ router.get('/getRes', express.json(), async (req, res) => {
         return;
     }
     try {
-        const results = await (await fetch(`${app1Host}/app1/getResults`)).json();
+        const results = await (await fetch(`${app1Host}/getResults`)).json();
         res.send({results, serviceId});
     } catch (e) {
         console.error(e)
