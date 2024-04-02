@@ -8,5 +8,5 @@ app1:
   image: vitaliicodefresh/app1:develop
 
 app2:
-  app1host: http://app1-service
+  app1host: http://app1-service/app1
   image: vitaliicodefresh/app2:develop

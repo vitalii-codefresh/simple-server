@@ -5,8 +5,9 @@ metadata:
   annotations:
     target: /
 spec:
+  ingressClassName: nginx-internal
   rules:
-    - host: non-prod-ue1-e2e-1.cf-op.com
+    - host: single-service-vitalii.rnd-sandbox.cf-infra.com
       http:
         paths:
           - path: /app1
