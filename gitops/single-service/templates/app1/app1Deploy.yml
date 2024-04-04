@@ -5,7 +5,7 @@ metadata:
   labels:
     app: simple-deployment1
 spec:
-  replicas: ${{ atoi .Values.replicaCount}}
+  replicas: ${{ atoi (.Values.replicaCount)}}
   selector:
     matchLabels:
       app: app1
