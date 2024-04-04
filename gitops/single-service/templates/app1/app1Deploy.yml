@@ -5,7 +5,7 @@ metadata:
   labels:
     app: simple-deployment1
 spec:
-  replicas: 2
+  replicas: ${{.Values.replicaCount}}
   selector:
     matchLabels:
       app: app1
