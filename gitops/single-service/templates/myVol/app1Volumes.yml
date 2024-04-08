@@ -3,7 +3,7 @@ kind: PersistentVolumeClaim
 metadata:
   name: results-claim
 spec:
-  storageClassName: ebs-csi
+  storageClassName: local-class
   accessModes:
     - ReadWriteOnce
   resources:
