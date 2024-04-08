@@ -5,7 +5,7 @@ metadata:
   annotations:
     target: /
 spec:
-  ingressClassName: nginx-internal
+  ingressClassName: traefik
   rules:
     #- host: single-service-vitalii.rnd-sandbox.cf-infra.com
     - http:
