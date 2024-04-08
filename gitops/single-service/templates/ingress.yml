@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx-internal
   rules:
-    #- host: single-service-vitalii.rnd-sandbox.cf-infra.com
+    - host: localhost
     - http:
         paths:
           - path: /app1
