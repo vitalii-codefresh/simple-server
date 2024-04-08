@@ -8,7 +8,7 @@ spec:
   ingressClassName: nginx-internal
   rules:
     - host: localhost
-    - http:
+      http:
         paths:
           - path: /app1
             pathType: Prefix
