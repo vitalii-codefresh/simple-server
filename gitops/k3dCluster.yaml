@@ -2,9 +2,9 @@ apiVersion: k3d.io/v1alpha5
 kind: Simple
 metadata:
   name: mycluster-vitalii # name that you want to give to your cluster (will still be prefixed with `k3d-`)
-servers: 1 # same as `--servers 1`
-agents: 3 # same as `--agents 2`
+servers: 2 # same as `--servers 1`
+agents: 2 # same as `--agents 2`
 ports:
-  - port: 8080:80 # same as `--port '8080:80@loadbalancer'`
+  - port: 8081:80 # same as `--port '8080:80@loadbalancer'`
     nodeFilters:
       - loadbalancer

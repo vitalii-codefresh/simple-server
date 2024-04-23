@@ -1,0 +1,9 @@
+global:
+  codefresh:
+    url: https://vitalii-platform.ngrok.io
+  runtime:
+    ingress:
+      enabled: true
+      hosts:
+        - vitalii-ingresshost.ngrok.io
+      className: traefik
