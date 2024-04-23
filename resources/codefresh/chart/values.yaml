@@ -1,0 +1,16 @@
+gitops-runtime:
+  global:
+    codefresh:
+      accountId: 65d7594a684f6171df4b7787
+      url: https://vitalii-platform.ngrok.io
+      userToken:
+        secretKeyRef:
+          name: codefresh-user-token
+          key: token
+    runtime:
+      ingress:
+        className: traefik
+        enabled: true
+        hosts:
+          - vitalii-ingresshost.ngrok.io
+      name: codefresh
