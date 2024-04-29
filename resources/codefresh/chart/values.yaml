@@ -7,10 +7,11 @@ gitops-runtime:
         secretKeyRef:
           name: codefresh-user-token
           key: token
-    runtime:
+     runtime:
       ingress:
-        className: traefik
+        className: nginx-public
         enabled: true
         hosts:
-          - vitalii-ingresshost.ngrok.io
+          - hermes-vitalii.rnd.sandbox.codefresh.io
+        protocol: https
       name: codefresh
