@@ -60,7 +60,14 @@ app.use("/app1", router);
 app.listen(port, () => {
     log(`server starts at port ${port}`, `id is - ${serviceId}`);
 })
+module.exports = { app };
 
+// Запускаємо сервер лише, якщо файл не імпортовано як модуль (тобто, якщо його запускають безпосередньо)
+if (require.main === module) {
+    app.listen(port, () => {
+        log(`server starts at port ${port}`, `id is - ${serviceId}`);
+    });
+}
 async function writeResult(result, serviceId) {
     await appendFile(resultFile, `${result};SERVICE_ID-${serviceId};` + "\n");
 }
@@ -68,3 +75,4 @@ async function writeResult(result, serviceId) {
 async function readResults() {
     return readFile(resultFile, {encoding: "utf-8"});
 }
+
