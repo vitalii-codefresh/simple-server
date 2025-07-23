@@ -29,5 +29,6 @@ jobs:
       - name: Run a multi-line script
         run: |
           cd app1
+          yarn install
           yarn test
           echo test, and deploy your project.
