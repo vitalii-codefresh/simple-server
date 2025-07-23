@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: app2-service
+  labels:
+    owner: vitalii
+spec:
+  selector:
+    app: app2
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8010
+      name: http
+  type: ClusterIP
