@@ -1,0 +1,14 @@
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: mycluster-vitalii # name that you want to give to your cluster (will still be prefixed with `k3d-`)
+servers: 1 # same as `--servers 1`
+agents: 0 # same as `--agents 2`
+image: rancher/k3s:v1.30.0-k3s1
+#ports:
+#  - port: 8080:80 # same as `--port '8080:80@loadbalancer'`
+#    nodeFilters:
+#      - loadbalancer
+
+
+# k3d cluster create --config gitops/k3dCluster.yaml
