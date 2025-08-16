@@ -11,7 +11,7 @@ const port = process.env.PORT || 8000;
 const serviceId = crypto.randomBytes(5).toString("hex");
 const resultFile = "./data/results.csv";
 
-const app = express(); // Експортуємо цей екземпляр
+const app = express();
 
 
 router.get('/', (req, res) => {
