@@ -6,5 +6,6 @@ steps:
       - 'europe-north1-docker.pkg.dev/prisma-extractor/gc-registry-vitalii/gc-registry-vitalii:$COMMIT_SHA'
       - '-f'
       - 'app1/Dockerfile'
+      - '--push'
       - '.'
 logsBucket: 'gs://prisma-extractor_cloudbuild'
