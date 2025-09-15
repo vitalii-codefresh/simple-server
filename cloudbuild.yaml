@@ -7,5 +7,4 @@ steps:
       - '-f'
       - 'app1/Dockerfile'
       - 'app1'
-options:
-  logs_bucket: 'gs://prisma-extractor_cloudbuild'
+logsBucket: 'gs://prisma-extractor_cloudbuild'
