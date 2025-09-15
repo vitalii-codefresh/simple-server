@@ -1,6 +1,7 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
     args:
+      - 'buildx'
       - 'build'
       - '-t'
       - 'europe-north1-docker.pkg.dev/prisma-extractor/gc-registry-vitalii/gc-registry-vitalii:$COMMIT_SHA'
