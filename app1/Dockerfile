@@ -1,5 +1,5 @@
 ARG BUILD_VAR="buildVar"
-FROM node:20.18.0-alpine3.20
+FROM node:20.18.0-alpine3.21
 LABEL authors="vitalii-codefresh"
 WORKDIR app/
 COPY . .
