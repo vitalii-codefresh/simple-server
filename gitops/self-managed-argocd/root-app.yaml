@@ -13,7 +13,7 @@ spec:
     path: gitops/self-managed-argocd/kustomize
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: argocd-sm
+    namespace: default
   syncPolicy:
     automated:
       prune: true

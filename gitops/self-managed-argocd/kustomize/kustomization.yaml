@@ -10,6 +10,6 @@ patches:
   - patch: |-
       - op: replace
         path: /subjects/0/namespace
-        value: argo-cd-sm
+        value: default
     target:
       kind: ClusterRoleBinding
