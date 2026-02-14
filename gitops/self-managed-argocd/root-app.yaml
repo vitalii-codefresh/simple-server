@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: argocd
+  name: root-self-manages-argocd
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,10 +10,10 @@ spec:
   source:
     repoURL: 'https://github.com/vitalii-codefresh/simple-server.git'
     targetRevision: develop
-    path: gitops/self-managed-argocd/
+    path: gitops/self-managed-argocd/kustomize/kustomization.yaml
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: default
+    namespace: argocd-sm
   syncPolicy:
     automated:
       prune: true

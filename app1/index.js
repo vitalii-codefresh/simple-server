@@ -66,7 +66,6 @@ if (require.main === module) {
     });
 }
 
-
 async function writeResult(result, serviceId) {
     await appendFile(resultFile, `${result};SERVICE_ID-${serviceId};` + "\n");
 }

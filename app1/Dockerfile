@@ -1,10 +1,11 @@
 ARG BUILD_VAR="buildVar"
-FROM node:20.18.0-alpine3.20
+FROM dhi.io/node:24-debian13-sfw-dev
 LABEL authors="vitalii-codefresh"
 WORKDIR app/
-COPY . .
+COPY --chown=node:node package.json ./
+RUN mkdir -p data && chown -R node:node /app
+VOLUME ["/app/data"]
+USER node
+RUN yarn install --frozen-lockfile --production
 EXPOSE 8002
-VOLUME /myvol
-RUN yarn install && npm -g uninstall npm
-
 ENTRYPOINT ["node", "index.js"]
