@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: 'https://github.com/vitalii-codefresh/simple-server.git'
     targetRevision: develop
-    path: gitops/self-managed-argocd/kustomize/kustomization.yaml
+    path: gitops/self-managed-argocd/kustomize/
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd-sm
