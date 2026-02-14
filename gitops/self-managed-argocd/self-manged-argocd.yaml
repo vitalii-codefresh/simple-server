@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: 'https://github.com/vitalii-codefresh/simple-server.git'
-    targetRevision: HEAD
+    targetRevision: develop
     path: gitops/self-managed-argocd/
   destination:
     server: 'https://kubernetes.default.svc'
