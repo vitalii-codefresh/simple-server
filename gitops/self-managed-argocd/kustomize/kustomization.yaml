@@ -4,12 +4,3 @@ kind: Kustomization
 namespace: argo-cd-sm
 resources:
   - https://raw.githubusercontent.com/argoproj/argo-cd/v3.2.3/manifests/install.yaml
-
-
-patches:
-  - patch: |-
-      - op: replace
-        path: /subjects/0/namespace
-        value: default
-    target:
-      kind: ClusterRoleBinding
