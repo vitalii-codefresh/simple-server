@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: mongodb-application
-  namespace: default
+  namespace: argocd-sm
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
