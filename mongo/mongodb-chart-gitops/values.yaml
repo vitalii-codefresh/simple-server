@@ -1,0 +1,12 @@
+mongodb:
+  replicaCount: 3
+  auth:
+    enabled: true
+    rootUsername: "vitalii"
+    existingSecret: mongo-secret
+    existingSecretPasswordKey: mongo-password
+  metrics:
+    enabled: true
+  persistence:
+    enabled: true
+    size: 20Gi

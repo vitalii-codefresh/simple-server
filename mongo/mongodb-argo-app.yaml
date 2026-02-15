@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: root-self-manages-argocd
+  name: mongodb-application
   namespace: default
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -10,10 +10,10 @@ spec:
   source:
     repoURL: 'https://github.com/vitalii-codefresh/simple-server.git'
     targetRevision: develop
-    path: gitops/self-managed-argocd/kustomize
+    path: mongo/mongodb-chart-gitops
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: default-1
+    namespace: mongo-ns
   syncPolicy:
     automated:
       prune: true

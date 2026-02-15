@@ -1,0 +1,10 @@
+apiVersion: v2
+name: mongodb-chart-gitops
+description: A Helm chart for Kubernetes with mongodb official chart
+type: application
+version: 0.1.0
+appVersion: "8.2.5"
+dependencies:
+  - name: mongodb
+    version: The version of the chart 0.10.5
+    repository: oci://registry-1.docker.io/cloudpirates/mongodb
