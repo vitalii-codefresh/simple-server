@@ -7,4 +7,4 @@ appVersion: "8.2.5"
 dependencies:
   - name: mongodb
     version: 0.10.5
-    repository: oci://registry-1.docker.io/cloudpirates/
+    repository: oci://registry-1.docker.io/cloudpirates
