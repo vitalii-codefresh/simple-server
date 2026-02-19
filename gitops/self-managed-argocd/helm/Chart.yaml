@@ -1,0 +1,10 @@
+apiVersion: v2
+name: self-managed-argocd
+description: Self-managed ArgoCD Helm Chart
+type: application
+version: 1.0.0
+appVersion: "3.2.6"
+dependencies:
+  - name: argo-cd
+    version: 9.3.7
+    repository: https://argoproj.github.io/argo-helm
