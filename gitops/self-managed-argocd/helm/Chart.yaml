@@ -3,8 +3,8 @@ name: self-managed-argocd
 description: Self-managed ArgoCD Helm Chart
 type: application
 version: 1.0.0
-appVersion: "3.2.6"
+appVersion: "3.3.0"
 dependencies:
   - name: argo-cd
-    version: 9.3.7
+    version: 9.4.3
     repository: https://argoproj.github.io/argo-helm
