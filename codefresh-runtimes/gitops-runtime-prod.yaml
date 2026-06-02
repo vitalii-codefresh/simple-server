@@ -1,0 +1,5 @@
+sealed-secrets:
+  image:
+    tag: 0.32.0
+
+# helm upgrade --install cf-gitops-runtime --create-namespace --namespace codefresh --set global.codefresh.accountId=65c25fdafe03c183f3638e87 --set global.codefresh.userToken.token=68c7f04d1c536c45ff10d7a5.d26187a9f7d12806d57b46f004e178dd --set global.runtime.name=codefresh oci://quay.io/codefresh/gitops-runtime
