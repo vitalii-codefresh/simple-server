@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: mongo-helm-repro
-  namespace: mongo-app
+  namespace: codefresh
 spec:
   project: default
   source:
     repoURL: https://charts.bitnami.com/bitnami
-    chart: mongo
+    chart: mongodb
     targetRevision: 19.1.0
     helm:
       releaseName: mongo-helm-repro
