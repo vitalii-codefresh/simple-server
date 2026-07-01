@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-database
+  namespace: monorepo-test
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-database
+  template:
+    metadata:
+      labels:
+        app: app-database
+    spec:
+      containers:
+        - name: app-database
+          image: nginx:1.25
+          ports:
+            - containerPort: 80
