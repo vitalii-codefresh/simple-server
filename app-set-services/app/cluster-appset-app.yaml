@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/manifest-generate-paths: 'app-set-services/app-set'
+  name: cluster-appset
+  namespace: codefresh
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: codefresh
+  source:
+    repoURL: https://github.com/vitalii-codefresh/simple-server.git
+    path: app-set-services/app-set
+    targetRevision: main2
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
