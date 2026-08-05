@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-frontend
+  namespace: monorepo-test
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app-frontend
+  template:
+    metadata:
+      labels:
+        app: app-frontend
+    spec:
+      containers:
+        - name: app-frontend
+          image: nginx:1.27
+          ports:
+            - containerPort: 80

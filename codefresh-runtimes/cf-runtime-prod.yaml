@@ -1,0 +1,13 @@
+global:
+  codefreshToken: "6a032088c0ec88f0847838f9.2de3dbd28d4468cdeb66803f8cc1f35b"
+  accountId: "65c25fdafe03c183f3638e87"
+  context: "minikube"
+monitor:
+  enabled: true
+
+runtime:
+  engine:
+    env:
+      RETRY_PULL_COUNT: "11"
+      RETRY_PUSH_COUNT: "11"
+      RETRY_TIMEOUT: "10"

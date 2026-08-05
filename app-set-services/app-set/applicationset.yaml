@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: cluster-appset
+  namespace: codefresh
+spec:
+  generators:
+    - clusters: {}
+    - list:
+        elements:
+          - name: fake-cluster-1
+            server: https://kubernetes.default.svc
+          - name: fake-cluster-2
+            server: https://kubernetes.default.svc
+  template:
+    metadata:
+      name: '{{name}}-app-frontend'
+    spec:
+      project: default
+      source:
+        repoURL: https://github.com/vitalii-codefresh/simple-server.git
+        targetRevision: main2
+        path: gitops/monorepo-test/app-frontend
+      destination:
+        server: '{{server}}'
+        namespace: monorepo-test
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        syncOptions:
+          - CreateNamespace=true

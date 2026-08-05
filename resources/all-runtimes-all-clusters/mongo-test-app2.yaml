@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: mongo-test-app2
+  namespace: codefresh
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  annotations:
+    mrp-controller.argoproj.io/change-revision: ""
+    mrp-controller.argoproj.io/change-revisions: ""
+    mrp-controller.argoproj.io/git-revision: ""
+    mrp-controller.argoproj.io/git-revisions: ""
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/vitalii-codefresh/simple-server.git
+    path: gitops/mongo-helm-application/mongo-test-app2
+    targetRevision: main2
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: mongo-test-app2
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
