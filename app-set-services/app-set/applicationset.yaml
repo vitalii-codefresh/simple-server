@@ -9,9 +9,9 @@ spec:
     - list:
         elements:
           - name: fake-cluster-1
-            server: https://fake-cluster-1.invalid:6443
+            server: https://kubernetes.default.svc
           - name: fake-cluster-2
-            server: https://fake-cluster-2.invalid:6443
+            server: https://kubernetes.default.svc
   template:
     metadata:
       name: '{{name}}-app-frontend'
